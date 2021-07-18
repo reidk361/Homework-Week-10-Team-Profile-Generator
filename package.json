@@ -1,0 +1,24 @@
+{
+  "name": "homework-week-10-team-profile-generator",
+  "version": "1.0.0",
+  "description": "UofO Coding Bootcamp Week 10 Homework: Team Profile Generator",
+  "main": "employeeHandler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reidk361/Homework-Week-10-Team-Profile-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reidk361/Homework-Week-10-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/reidk361/Homework-Week-10-Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "jest": "^27.0.6"
+  }
+}
