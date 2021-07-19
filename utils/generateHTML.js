@@ -22,7 +22,7 @@ function generateEngineers(engineer){
                 <li class="list-group-item">Name: ${engineer.name}</li>
                 <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></ali>
                 <li class="list-group-item">Employee ID: ${engineer.id}</li>
-                <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}">${engineer.name}'s GitHub Profile</a></li>
+                <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}" target="_blank" rel="noopener noreferrer">${engineer.name}'s GitHub Profile</a></li>
             </ul>
         </div>
         <br />`
@@ -55,7 +55,9 @@ function generateHTML(managers, engineers, interns) {
             <title>Employee Cards</title>
         </head>
         <body>
-        <h1>Employee Cards</h1>
+        <header>
+            <h1>Employee Cards</h1>
+        </header>
         <div class="container">
             <div class="row">
                 <div class="col">
