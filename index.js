@@ -14,9 +14,6 @@ function writeToFile(data) {
 
 async function init() {
     await handleEmployee();
-    console.log(managersArr);
-    console.log(engineersArr);
-    console.log(internsArr);
     writeToFile(generateHTML(managersArr,engineersArr,internsArr));
 }
 

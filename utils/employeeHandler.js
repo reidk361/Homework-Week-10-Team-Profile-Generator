@@ -47,7 +47,7 @@ function userInput(){
         {name: 'lastEntry',
         message: 'Will this be your last employee entry?',
         type: 'list',
-        choices: ["Yes", "No"]},
+        choices: ["No", "Yes"]},
     ])
 }
 
@@ -111,9 +111,12 @@ async function handleEmployee(){
     }
     let employeeEntry = await userInput();
     if(employeeEntry.lastEntry === 'No'){
-        await handleEmployee()
-    } else if(employeeEntry.lastEntry === 'Yes'){
-        generateHTML(managersArr, engineersArr, internsArr)
+        await handleEmployee();
+    } else if((employeeEntry.lastEntry === 'Yes') && (managersArr.length > 0) && (engineersArr.length > 0)){
+        generateHTML(managersArr, engineersArr, internsArr);
+    } else {
+        console.log("Please ensure you have at lease one Manager AND at least one Engineer before selecting 'Yes' again.");
+        await handleEmployee();
     }
 }
 
