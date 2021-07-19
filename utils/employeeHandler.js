@@ -5,19 +5,21 @@ const generateHTML = generateHTMLjs.generateHTML;
 let managersArr = [];
 let engineersArr = [];
 let internsArr = [];
-class Team{
-    constructor(){
-        managers = [];
-        engineers = [];
-        interns = [];
-    };
-}
 class Employee{
     constructor(name, email, id, role){
         this.name = name;
         this.email = email;
         this.id = id;
         this.role = role;
+    }
+    getName(){
+        return this.name;
+    }
+    getEmail(){
+        return this.email;
+    }
+    getId(){
+        return this.id;
     }
     getRole(){
         return this.role;
@@ -28,17 +30,35 @@ class Manager extends Employee{
         super(name, email, id, role);
         this.officeNum = officeNum;
     }
+    getRole(){
+        return this.role;
+    }
+    getOfficeNum(){
+        return this.officeNum;
+    }
 }
 class Engineer extends Employee{
     constructor(name, email, id, role, github){
         super(name, email, id, role);
         this.github = github;
     }
+    getRole(){
+        return this.role;
+    }
+    getGithub(){
+        return this.github;
+    }
 }
 class Intern extends Employee{
     constructor(name, email, id, role, school){
         super(name, email, id, role);
         this.school = school;
+    }
+    getRole(){
+        return this.role;
+    }
+    getSchool(){
+        return this.school;
     }
 }
 
@@ -95,7 +115,7 @@ function promptForIntern(){
 
 async function handleEmployee(){
     let employeePrompt = await promptForEmployee();
-    let employee = new Employee(employeePrompt.name, employeePrompt.email, employeePrompt.id, employeePrompt.role)
+    let employee = new Employee(employeePrompt.name, employeePrompt.email, employeePrompt.id, 'Employee')
     if(employeePrompt.role === 'Manager'){
         let managerAnswer = await promptForManager();
         let manager = new Manager(employeePrompt.name, employeePrompt.email, employeePrompt.id, employeePrompt.role, managerAnswer.officeNum);
@@ -122,7 +142,6 @@ async function handleEmployee(){
 
 module.exports = {
     handleEmployee,
-    Team,
     Employee,
     Manager,
     Engineer,
