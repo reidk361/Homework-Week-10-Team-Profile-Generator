@@ -1,4 +1,3 @@
-//import inquirer from 'inquirer';
 const inquirer = require('inquirer');
 const generateHTMLjs = require('./generateHTML');
 const generateHTML = generateHTMLjs.generateHTML;
