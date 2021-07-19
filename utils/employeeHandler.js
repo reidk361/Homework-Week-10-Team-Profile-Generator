@@ -122,6 +122,11 @@ async function handleEmployee(){
 
 module.exports = {
     handleEmployee,
+    Team,
+    Employee,
+    Manager,
+    Engineer,
+    Intern,
     managersArr,
     engineersArr,
     internsArr,

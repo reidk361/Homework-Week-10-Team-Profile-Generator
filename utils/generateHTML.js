@@ -1,46 +1,15 @@
+// generateManagers, generateEngineers, and generateInterns must return one line for testing purposes. 
+
 function generateManagers(manager){
-    return `<div class="card" style="width: 18rem;">
-            <div class="card-header">
-                ${manager.role}
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Name: ${manager.name}</li>
-                <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></ali>
-                <li class="list-group-item">Employee ID: ${manager.id}</li>
-                <li class="list-group-item">Office Number: ${manager.officeNum}</li>
-            </ul>
-        </div>
-        <br />`
+    return `<div class="card" style="width: 18rem;"><div class="card-header">${manager.role}</div><ul class="list-group list-group-flush"><li class="list-group-item">Name: ${manager.name}</li><li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></ali><li class="list-group-item">Employee ID: ${manager.id}</li><li class="list-group-item">Office Number: ${manager.officeNum}</li></ul></div><br />`
 }
 
 function generateEngineers(engineer){
-    return `<div class="card" style="width: 18rem;">
-            <div class="card-header">
-                ${engineer.role}
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Name: ${engineer.name}</li>
-                <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></ali>
-                <li class="list-group-item">Employee ID: ${engineer.id}</li>
-                <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}" target="_blank" rel="noopener noreferrer">${engineer.name}'s GitHub Profile</a></li>
-            </ul>
-        </div>
-        <br />`
+    return `<div class="card" style="width: 18rem;"><div class="card-header">${engineer.role}</div><ul class="list-group list-group-flush"><li class="list-group-item">Name: ${engineer.name}</li><li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></ali><li class="list-group-item">Employee ID: ${engineer.id}</li><li class="list-group-item">Github: <a href="https://github.com/${engineer.github}" target="_blank" rel="noopener noreferrer">${engineer.name}'s GitHub Profile</a></li></ul></div><br />`
 }
 
 function generateInterns(intern){
-    return `<div class="card" style="width: 18rem;">
-            <div class="card-header">
-                ${intern.role}
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Name: ${intern.name}</li>
-                <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></ali>
-                <li class="list-group-item">Employee ID: ${intern.id}</li>
-                <li class="list-group-item">School: ${intern.school}</li>
-            </ul>
-        </div>
-        <br />`
+    return `<div class="card" style="width: 18rem;"><div class="card-header">${intern.role}</div><ul class="list-group list-group-flush"><li class="list-group-item">Name: ${intern.name}</li><li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></ali><li class="list-group-item">Employee ID: ${intern.id}</li><li class="list-group-item">School: ${intern.school}</li></ul></div><br />`
 }
 
 function generateHTML(managers, engineers, interns) {
@@ -83,5 +52,8 @@ function generateHTML(managers, engineers, interns) {
 }
 
 module.exports = {
+    generateManagers,
+    generateEngineers,
+    generateInterns,
     generateHTML
 }
