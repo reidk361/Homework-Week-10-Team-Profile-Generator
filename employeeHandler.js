@@ -1,6 +1,9 @@
 //import inquirer from 'inquirer';
 const inquirer = require('inquirer');
 
+let managersArr = [];
+let engineersArr = [];
+let internsArr = [];
 class Team{
     constructor(){
         managers = [];
@@ -89,7 +92,7 @@ function promptForIntern(){
     ])
 }
 
-async function employeeHandler(){
+async function handleEmployee(){
     let employeePrompt = await promptForEmployee();
     let employee = new Employee(employeePrompt.name, employeePrompt.email, employeePrompt.id, employeePrompt.role)
     if(employeePrompt.role === 'Manager'){
@@ -107,7 +110,7 @@ async function employeeHandler(){
     }
     let employeeEntry = await userInput();
     if(employeeEntry.lastEntry === 'No'){
-        employeeHandler()
+        await handleEmployee()
     } else if(employeeEntry.lastEntry === 'Yes'){
         generateHTML(managersArr, engineersArr, internsArr)
     }
@@ -124,18 +127,38 @@ function generateHTML(managers, engineers, interns) {
     </head>
     <body>
     <h1>Employee Cards</h1>
-    <p>${managers}</p>
-    <p>${engineers}</p>
-    <p>${interns}</p>
+    <h2>Manager</h2>
+    <p>
+    ${managers[0].role}<br />
+    ${managers[0].name}<br />
+    ${managers[0].email}<br />
+    ${managers[0].id}<br />
+    ${managers[0].officeNum}<br />
+    </p>
+    <h2>Engineers</h2>
+    <p>
+    ${engineers[0].role}<br />
+    ${engineers[0].name}<br />
+    ${engineers[0].email}<br />
+    ${engineers[0].id}<br />
+    ${engineers[0].github}<br />
+    </p>
+    <h2>Interns</h2>
+    <p>
+    ${interns[0].role}<br />
+    ${interns[0].name}<br />
+    ${interns[0].email}<br />
+    ${interns[0].id}<br />
+    ${interns[0].school}<br />
+    </p>
     </body>
     </html>`;
 }
 
 module.exports = {
-    employeeHandler,
+    handleEmployee,
     generateHTML,
-    Manager, 
-    Intern,
-    Team,
-    Engineer
+    managersArr,
+    engineersArr,
+    internsArr,
 }

@@ -1,9 +1,10 @@
-import employeeHandler from './employeeHandler';
+const employeeHandler = require('./employeeHandler');
 const fs = require('fs');
-
-let managersArr = [];
-let engineersArr = [];
-let internsArr = [];
+const handleEmployee = employeeHandler.handleEmployee
+const generateHTML = employeeHandler.generateHTML
+const managersArr = employeeHandler.managersArr
+const engineersArr = employeeHandler.engineersArr
+const internsArr = employeeHandler.internsArr
 
 function writeToFile(data) {
     fs.appendFile("index.html", data, 
@@ -11,7 +12,10 @@ function writeToFile(data) {
 }
 
 async function init() {
-    await employeeHandler();
+    await handleEmployee();
+    console.log(managersArr);
+    console.log(engineersArr);
+    console.log(internsArr);
     writeToFile(generateHTML(managersArr,engineersArr,internsArr));
 }
 
