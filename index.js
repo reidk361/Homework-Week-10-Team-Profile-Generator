@@ -1,7 +1,18 @@
 import employeeHandler from './employeeHandler';
 const fs = require('fs');
 
-function writeToFile(fileName, data) {
-    fs.appendFile(`${fileName}.html`, data, 
-    (err) => err ? console.error(err) : console.log(`${fileName}.html has been generated.`))
+let managersArr = [];
+let engineersArr = [];
+let internsArr = [];
+
+function writeToFile(data) {
+    fs.appendFile("index.html", data, 
+    (err) => err ? console.error(err) : console.log("index.html has been generated."))
 }
+
+async function init() {
+    await employeeHandler();
+    writeToFile(generateHTML(managersArr,engineersArr,internsArr));
+}
+
+init();
