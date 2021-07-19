@@ -1,6 +1,5 @@
-function generateManagers(managers){
-    managers.forEach(function (manager) {
-        return `<div class="card" style="width: 18rem;">
+function generateManagers(manager){
+    return `<div class="card" style="width: 18rem;">
             <div class="card-header">
                 ${manager.role}
             </div>
@@ -10,13 +9,12 @@ function generateManagers(managers){
                 <li class="list-group-item">Employee ID: ${manager.id}</li>
                 <li class="list-group-item">Office Number: ${manager.officeNum}</li>
             </ul>
-        </div>`
-    })
+        </div>
+        <br />`
 }
 
-function generateEngineers(engineers){
-    engineers.forEach(function (engineer) {
-        return `<div class="card" style="width: 18rem;">
+function generateEngineers(engineer){
+    return `<div class="card" style="width: 18rem;">
             <div class="card-header">
                 ${engineer.role}
             </div>
@@ -24,15 +22,14 @@ function generateEngineers(engineers){
                 <li class="list-group-item">Name: ${engineer.name}</li>
                 <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></ali>
                 <li class="list-group-item">Employee ID: ${engineer.id}</li>
-                <li class="list-group-item">Office Number: <a href="https://github.com/${engineer.github}">${engineer.name}'s GitHub Profile</a></li>
+                <li class="list-group-item">Github: <a href="https://github.com/${engineer.github}">${engineer.name}'s GitHub Profile</a></li>
             </ul>
-        </div>`
-    })
+        </div>
+        <br />`
 }
 
-function generateInterns(interns){
-    interns.forEach(function (intern) {
-        return `<div class="card" style="width: 18rem;">
+function generateInterns(intern){
+    return `<div class="card" style="width: 18rem;">
             <div class="card-header">
                 ${intern.role}
             </div>
@@ -40,10 +37,10 @@ function generateInterns(interns){
                 <li class="list-group-item">Name: ${intern.name}</li>
                 <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></ali>
                 <li class="list-group-item">Employee ID: ${intern.id}</li>
-                <li class="list-group-item">Office Number: ${intern.school}</li>
+                <li class="list-group-item">School: ${intern.school}</li>
             </ul>
-        </div>`
-    })
+        </div>
+        <br />`
 }
 
 function generateHTML(managers, engineers, interns) {
@@ -59,10 +56,25 @@ function generateHTML(managers, engineers, interns) {
         </head>
         <body>
         <h1>Employee Cards</h1>
-        ${generateManagers(managers)}
-        ${generateEngineers(engineers)}
-        ${generateInterns(interns)}
-        <script src="./assets/script.js"></script>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                <h2>Managers</h2>
+                <hr>
+                ${managers.map(generateManagers).join('\n')}
+                </div>
+                <div class="col">
+                <h2>Engineers</h2>
+                <hr>
+                ${engineers.map(generateEngineers).join('\n')}
+                </div>
+                <div class="col">
+                <h2>Interns</h2>
+                <hr>
+                ${interns.map(generateInterns).join('\n')}
+                </div>
+            </div>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         </body>
         </html>`;
