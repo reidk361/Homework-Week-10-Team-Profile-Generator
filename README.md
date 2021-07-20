@@ -3,6 +3,7 @@
 ## UofO Coding Bootcamp Homework for Week 10
 
 ### The function of this app is to be able to enter your team members and have it render a website that looks like the example below. 
+> **This will replace current HTML file. This is to allow the main page to be the rendered page.**
 
 ### A live example can be accessed [here.](https://reidk361.github.io/Homework-Week-10-Team-Profile-Generator/)
 ### A video showing how this works is [here.](https://drive.google.com/file/d/15jexVxaVd5Rb2Yqbk9PPzchsPUA1e85_/view)
