@@ -8,7 +8,7 @@ const engineersArr = employeeHandler.engineersArr;
 const internsArr = employeeHandler.internsArr;
 
 function writeToFile(data) {
-    fs.appendFile("index.html", data, 
+    fs.writeFile("index.html", data, 
     (err) => err ? console.error(err) : console.log("index.html has been generated."))
 }
 
