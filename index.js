@@ -1,11 +1,6 @@
-const employeeHandler = require('./utils/employeeHandler');
 const fs = require('fs');
-const handleEmployee = employeeHandler.handleEmployee
-const generateHTMLjs = require('./utils/generateHTML');
-const generateHTML = generateHTMLjs.generateHTML;
-const managersArr = employeeHandler.managersArr;
-const engineersArr = employeeHandler.engineersArr;
-const internsArr = employeeHandler.internsArr;
+const { handleEmployee, managersArr, engineersArr, internsArr } = require('./utils/employeeHandler');
+const { generateHTML } = require('./utils/generateHTML');
 
 function writeToFile(data) {
     fs.writeFile("index.html", data, 

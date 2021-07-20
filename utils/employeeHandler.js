@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
-const generateHTMLjs = require('./generateHTML');
-const generateHTML = generateHTMLjs.generateHTML;
+const { generateHTML } = require('./generateHTML');
 
 let managersArr = [];
 let engineersArr = [];

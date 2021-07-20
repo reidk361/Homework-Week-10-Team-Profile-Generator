@@ -1,13 +1,5 @@
-const employeeHandler = require('../utils/employeeHandler');
-const Employee = employeeHandler.Employee;
-const Manager = employeeHandler.Manager;
-const Engineer = employeeHandler.Engineer;
-const Intern = employeeHandler.Intern;
-
-const generateHTMLjs = require('../utils/generateHTML');
-const generateManagers = generateHTMLjs.generateManagers;
-const generateEngineers = generateHTMLjs.generateEngineers;
-const generateInterns = generateHTMLjs.generateInterns;
+const { Employee, Manager, Engineer, Intern } = require('../utils/employeeHandler');
+const { generateManagers, generateEngineers, generateInterns } = require('../utils/generateHTML');
 
 describe('Employee Class Tests', () => {
     it('Has getName() as entered name.', () => {
