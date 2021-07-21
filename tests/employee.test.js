@@ -38,7 +38,7 @@ describe('Engineer Class Tests', () => {
         expect(karen.getRole()).toBe('Engineer')
     })
     it('Has getGithub() as entered github.', () => {
-        const karen = new Engineer('Karen', 'karen@email.com', '1', 'Manager', 'karen123');
+        const karen = new Engineer('Karen', 'karen@email.com', '1', 'Engineer', 'karen123');
         expect(karen.getGithub()).toBe('karen123')
     })
 })
