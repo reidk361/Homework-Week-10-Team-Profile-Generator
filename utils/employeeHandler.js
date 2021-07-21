@@ -77,13 +77,13 @@ function promptForEmployee(){
         type: 'list',
         choices: ["Manager", "Engineer", "Intern"]},
         {name: 'name',
-        message: 'What their name?',
+        message: 'What is their name?',
         type: 'input',},
         {name: 'email',
-        message: 'What their email?',
+        message: 'What is their email?',
         type: 'input',},
         {name: 'id',
-        message: 'What their employee ID?',
+        message: 'What is their employee ID?',
         type: 'input',},
     ])
 }
@@ -91,7 +91,7 @@ function promptForEmployee(){
 function promptForManager(){
     return inquirer.prompt([
         {name: 'officeNum',
-        message: 'What their Office Number?',
+        message: 'What is their Office Number?',
         type: 'input',},
     ])
 }
@@ -99,7 +99,7 @@ function promptForManager(){
 function promptForEngineer(){
     return inquirer.prompt([
         {name: 'github',
-        message: 'What their GitHub username?',
+        message: 'What is their GitHub username?',
         type: 'input',},
     ])
 }
